@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    int num1, num2, soma;
+    printf("Digite o primeiro número: ");
+    scanf("%d", &num1);  // atribuicao
+    printf("Digite o segundo número: ");
+    scanf("%d", &num2);  // atribuicao
+
+    soma = num1 + num2;  // operacao matematica
+    
+    if (soma % 2 == 0) {  // comparação
+        printf("A soma é %d, que é par.\n", soma);//atribuião
+    } else {
+        printf("A soma é %d, que é ímpar.\n", soma);//atribuição
+    }
+
+    return 0;
+}
