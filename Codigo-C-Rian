@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char codigo[1000];
+    int i;
+    int atribuicao = 0, comparacao = 0, soma = 0;
+
+    printf("Digite o código (uma linha):\n");
+    fgets(codigo, sizeof(codigo), stdin);
+
+    for(i = 0; i < strlen(codigo); i++) {
+        // Atribuição simples (não confundir com comparação)
+        if(codigo[i] == '=' && codigo[i+1] != '=') {
+            atribuicao++;
+        }
+
+        // Comparações
+        if(codigo[i] == '=' && codigo[i+1] == '=') {
+            comparacao++;
+            i++; // pular o próximo caractere
+        } else if(codigo[i] == '!' && codigo[i+1] == '=') {
+            comparacao++;
+            i++;
+        } else if(codigo[i] == '<' && codigo[i+1] == '=') {
+            comparacao++;
+            i++;
+        } else if(codigo[i] == '>' && codigo[i+1] == '=') {
+            comparacao++;
+            i++;
+        } else if(codigo[i] == '<' || codigo[i] == '>') {
+            comparacao++;
+        }
+
+        // Soma
+        if(codigo[i] == '+') {
+            soma++;
+        }
+    }
+
+    printf("Operações encontradas:\n");
+    printf("Atribuições: %d\n", atribuicao);
+    printf("Comparações: %d\n", comparacao);
+    printf("Somas: %d\n", soma);
+
+    return 0;
+}
