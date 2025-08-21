@@ -6,7 +6,7 @@
 int main() {
     int lista1[TAMANHO_LISTA] = {1, 2, 3, 4, 5};  // atribuicao valores
     int lista2[TAMANHO_LISTA] = {6, 7, 8, 9, 10}; // atribuicao valores
-    int resultado[TAMANHO_LISTA];  // atribuicao
+    int resultado[TAMANHO_LISTA];  
     
     
     multiplicarListas(lista1, lista2, resultado, TAMANHO_LISTA); // chama funcao com parametros (atribuicao 4)
@@ -25,4 +25,5 @@ void multiplicarListas(int lista1[], int lista2[], int resultado[], int tamanho)
         resultado[i] = lista1[i] * lista2[i];    //operacao matematica + atribuição
     }
 }
+
 
