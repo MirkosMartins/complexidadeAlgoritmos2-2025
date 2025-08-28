@@ -1,0 +1,21 @@
+vetor = [1, 2, 3]
+
+matriz = [
+    [4, 5, 6],
+    [7, 8, 9],
+    [10, 11, 12]
+]
+resultado = [0, 0, 0]
+
+for j in range(len(matriz[0])): #atribuição
+    soma = 0
+    for i in range(len(vetor)): 
+        soma += vetor[i] * matriz[i][j]
+    resultado[j] = soma
+
+print("Vetor original:") #atribuição
+print(vetor) #atribuição
+print("\nMatriz original:") #atribuição
+print(matriz) #atribuição
+print("\nResultado da multiplicação (vetor x matriz):") #atribuição
+print(resultado) #atribuição
