@@ -52,3 +52,5 @@ if resultados:
     print(f"Total de Consoantes: {consoantes}")
     print(f"Total de Palavras: {palavras}")
     print(f"Tempo de execução: {duracao_s:.6f} s")
+
+#modularizar mais o codigo e cacular o big O de tudo
