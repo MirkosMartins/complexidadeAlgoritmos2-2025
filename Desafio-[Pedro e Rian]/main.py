@@ -2,12 +2,14 @@ import os
 import time
 
 def analisar_arquivo(nome_arquivo):
+    
     try:
         with open(nome_arquivo, 'r', encoding='utf-8') as f:
             conteudo = f.read()
             
     except FileNotFoundError:
         print(f"Erro: O arquivo '{nome_arquivo}' não foi encontrado.")
+        print("Por favor, crie este arquivo no mesmo diretório do script.")
         return None
     except Exception as e:
         print(f"Ocorreu um erro ao ler o arquivo: {e}")
@@ -32,11 +34,16 @@ def analisar_arquivo(nome_arquivo):
 
     return cont_vogais, cont_consoantes, total_palavras
 
-nome_arquivo = "texto.txt"
+
+nome_do_seu_arquivo = "texto.txt"
+
 inicio = time.perf_counter()
-resultados = analisar_arquivo(nome_arquivo)
+
+resultados = analisar_arquivo(nome_do_seu_arquivo)
+
 fim = time.perf_counter()
-duracao_ms = (fim - inicio) * 1000
+
+duracao_s = fim - inicio
 
 if resultados:
     vogais, consoantes, palavras = resultados
@@ -44,4 +51,4 @@ if resultados:
     print(f"Total de Vogais: {vogais}")
     print(f"Total de Consoantes: {consoantes}")
     print(f"Total de Palavras: {palavras}")
-    print(f"Tempo de execução: {duracao_ms:.4f} ms")
+    print(f"Tempo de execução: {duracao_s:.6f} s")
