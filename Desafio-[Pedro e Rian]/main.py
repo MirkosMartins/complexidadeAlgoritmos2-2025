@@ -16,19 +16,18 @@ def ler_conteudo_arquivo(nome_arquivo):
         print(f"Ocorreu um erro ao ler o arquivo: {e}")
         return None
 
-def contar_vogais(conteudo):
+def analisar_caracteres(conteudo):
     cont_vogais = 0
-    for char in conteudo:
-        if char.lower() in VOGAIS:
-            cont_vogais += 1
-    return cont_vogais
-
-def contar_consoantes(conteudo):
     cont_consoantes = 0
+    
     for char in conteudo:
-        if char.lower() in CONSOANTES:
+        char_lower = char.lower()
+        if char_lower in VOGAIS:
+            cont_vogais += 1
+        elif char_lower in CONSOANTES:
             cont_consoantes += 1
-    return cont_consoantes
+            
+    return cont_vogais, cont_consoantes
 
 def contar_palavras(conteudo):
     palavras = conteudo.split()
@@ -50,8 +49,7 @@ def main():
     if conteudo is None:
         return
 
-    vogais = contar_vogais(conteudo)
-    consoantes = contar_consoantes(conteudo)
+    vogais, consoantes = analisar_caracteres(conteudo)
     palavras = contar_palavras(conteudo)
     
     fim = time.perf_counter()
@@ -62,4 +60,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
